@@ -12,26 +12,7 @@ import java.util.UUID;
 @Service
 public class RecetteService implements IRecetteService {
 
-    private final Map<UUID, Recette> recettes;
-
-    public RecetteService() {
-        recettes = new HashMap<>();
-        Recette recette = new Recette(UUID.randomUUID(),
-                "Tapenade", "Olives confites dénoyautées, Anchois, Ail, Huile d'Olive",
-                "Nettoyer les anchois, presser l'ail. Mettre tous les ingredients dans le mixeur. Mixer jusqu'à obtention de la texture souhaitée",
-                "Apéritif");
-        Recette recette2 = new Recette(UUID.randomUUID(), "Sauce au basilic",
-                "Basilic, Feta, Jus de citron, Huile d'olives, Sel, Poivre ",
-                "Mettre tous les ingrédients dans le mixeur. Mixer jusqu'à obtention dela texture souhaitée",
-                "Apéritif");
-        Recette recette3 = new Recette(UUID.randomUUID(), "Yaourt maison",
-                "Lait entier, Ferments lactique",
-                "Mettre tous les ingrédients dans le mixeur. Mixer jusqu'à l'apparition d'une mousse sur le lait. Remplir les pots. Les mettre dans la yaourtière. Programmer",
-                "Dessert");
-        recettes.put(recette.getId(), recette);
-        recettes.put(recette2.getId(), recette2);
-        recettes.put(recette3.getId(), recette3);
-    }
+    private Map<UUID, Recette> recettes;
 
     public Recette createRecette(Recette recette) {
         recette.setId(UUID.randomUUID());
@@ -62,7 +43,7 @@ public class RecetteService implements IRecetteService {
         if(!recette.getInstructions().isBlank())
             recetteToUpdate.setInstructions(recette.getInstructions());
 
-        if(!recette.getName().isBlank())
+        if(recette.getNom() != null && !recette.getNom().isBlank())
             recetteToUpdate.setName(recette.getName());
 
         return recettes.put(id, recetteToUpdate);

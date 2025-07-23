@@ -2,7 +2,6 @@ package org.example.cuisine.Service;
 
 import org.example.cuisine.Interfaces.ICategorieService;
 import org.example.cuisine.Model.Categorie;
-import org.example.cuisine.Model.Recette;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;

@@ -1,9 +1,8 @@
 package org.example.cuisine.Controlleur;
 
-
-import ch.qos.logback.core.model.Model;
 import org.example.cuisine.Interfaces.IRecetteService;
 import org.example.cuisine.Model.Recette;
+import org.springframework.ui.Model;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -23,7 +22,7 @@ public class RecetteControlleur {
     }
 
     // http://localhost:8080/home
-    @GetMapping("/home")
+    @GetMapping("/recette/home")
     public String home(){
         return "home";
     }

@@ -1,11 +1,9 @@
 package org.example.cuisine.Controlleur;
 
-import ch.qos.logback.core.model.Model;
 import org.example.cuisine.Interfaces.ICategorieService;
-import org.example.cuisine.Interfaces.IRecetteService;
 import org.example.cuisine.Model.Categorie;
-import org.example.cuisine.Model.Recette;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -24,10 +22,10 @@ public class CategorieControlleur {
     }
 
     // http://localhost:8080/home
-    @GetMapping("/home")
-    public String home(){
-        return "home";
-    }
+    // @GetMapping("/categorie/home")
+    // public String home(){
+    //    return "home";
+    // }
 
     // http://localhost:8080/register
     @GetMapping("/register")
@@ -70,8 +68,8 @@ public class CategorieControlleur {
     }
 
     @GetMapping("/delete/{id}")
-    public String deleteCategorie(@PathVariable UUID CatId){
-        categorieService.deleteCategorieById(CatId);
+    public String deleteCategorie(@PathVariable UUID catId){
+        categorieService.deleteCategorieByCatId(catId);
         return "redirect:/list";
     }
 }

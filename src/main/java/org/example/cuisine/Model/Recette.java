@@ -18,7 +18,10 @@ public class Recette {
     @NotNull (message = "Il faut le nom de la recette")
     @NotBlank
     private String nom;
+    @NotNull (message = "Tu as oublié quelque chose!")
     private String ingredient;
     private String instructions;
+    @NotBlank
+    @NotNull
     private Categorie name;
 }

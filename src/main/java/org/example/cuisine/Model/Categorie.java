@@ -13,10 +13,13 @@ import java.util.UUID;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+
 public class Categorie {
     private UUID catId;
     @NotNull (message = "Merci de mettre un nom!")
     @NotBlank
     private String name;
     private String description;
+
+
 }
